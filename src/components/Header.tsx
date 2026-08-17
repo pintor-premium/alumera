@@ -41,19 +41,16 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-12 h-12">
+            <Link href="/" className="flex items-center">
+              <div className="relative w-48 h-10">
                 <Image
-                  src="/imagens/ÍCONE SEM FUNDO PARA BG ESCURO.png"
-                  alt="Alumera Ícone"
+                  src="/imagens/LOGO%20COM%20DIMENS%C3%83O%20E%20VOLUME.png"
+                  alt="Alumera"
                   fill
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: 'contain', objectPosition: 'left' }}
                   priority
                 />
               </div>
-              <span className="font-serif tracking-widest text-[#C6A537] text-xl font-medium hidden sm:block">
-                ALUMERA
-              </span>
             </Link>
           </div>
 
