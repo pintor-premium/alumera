@@ -71,15 +71,10 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       {/* HERO SECTION */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center bg-black">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/imagens/imagem para hero e paralax.png"
-            alt="Arquitetura Alumera"
-            fill
-            style={{ objectFit: 'cover' }}
-            className="opacity-60"
-            priority
-          />
+        <div 
+          className="absolute inset-0 z-0 bg-fixed bg-cover bg-center opacity-60"
+          style={{ backgroundImage: "url('/imagens/imagem para hero e paralax.png')" }}
+        >
           <div className="absolute inset-0 bg-gradient-to-t from-[#171513] via-transparent to-black/50" />
         </div>
 
