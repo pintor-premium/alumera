@@ -10,7 +10,7 @@
   --color-gray-light: #E8E5E0;
   
   --font-sans: var(--font-geist-sans), Arial, sans-serif;
-  --font-serif: Georgia, serif;
+  --font-serif: var(--font-geist-sans), Arial, sans-serif;
 }
 
 :root {
