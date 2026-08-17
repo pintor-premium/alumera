@@ -107,7 +107,7 @@ export default function HomePage() {
       </section>
 
       {/* SERVIÇOS SECTION */}
-      <section className="bg-white/5 backdrop-blur-sm py-24 sm:py-32">
+      <section className="bg-[#171513]/75 backdrop-blur-md py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="font-serif text-xs sm:text-sm tracking-[0.2em] text-[#C6A537] font-semibold uppercase block mb-3">
