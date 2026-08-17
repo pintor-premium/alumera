@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Cinzel } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { ToastProvider } from "@/components/Toast";
 import "./globals.css";
 
@@ -9,10 +9,10 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const cinzel = Cinzel({
+const montserratSerif = Montserrat({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${montserrat.variable} ${cinzel.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${montserratSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-[#171513]">
         <ToastProvider>{children}</ToastProvider>

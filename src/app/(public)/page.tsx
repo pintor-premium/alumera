@@ -76,30 +76,32 @@ export default function HomePage() {
       <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center bg-black/40">
         <div className="absolute inset-0 bg-gradient-to-t from-[#171513] via-transparent to-black/50 z-0" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <span className="font-serif tracking-[0.3em] text-[#C6A537] text-xs sm:text-sm font-semibold uppercase block mb-6 animate-fade-in-up">
-            ALUMERA ALTO PADRÃO
-          </span>
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl tracking-wider text-white mb-6 max-w-4xl mx-auto leading-tight animate-fade-in-up">
-            Arquitetura sob medida.<br/>
-            <span className="text-gold-gradient font-medium">Precisão em cada detalhe.</span>
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-[#E8E5E0] max-w-2xl mx-auto mb-10 font-light leading-relaxed tracking-wide animate-fade-in-up">
-            Soluções personalizadas em ACM para fachadas, portas, portões e móveis planejados de alto padrão.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up">
-            <Link
-              href="/portal/projetos/novo"
-              className="w-full sm:w-auto bg-[#C6A537] hover:bg-[#DFBF52] text-white px-8 py-4 rounded-sm text-xs font-semibold tracking-widest uppercase transition-all duration-300 shadow-lg shadow-black/20"
-            >
-              ENVIAR MEU PROJETO
-            </Link>
-            <Link
-              href="/a-alumera"
-              className="w-full sm:w-auto border border-[#E8E5E0] hover:border-[#C6A537] hover:text-[#C6A537] text-white px-8 py-4 rounded-sm text-xs font-semibold tracking-widest uppercase transition-all duration-300"
-            >
-              CONHECER A ALUMERA
-            </Link>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left text-white w-full">
+          <div className="max-w-3xl">
+            <span className="font-serif tracking-[0.3em] text-[#C6A537] text-xs sm:text-sm font-semibold uppercase block mb-6 animate-fade-in-up">
+              ALUMERA ALTO PADRÃO
+            </span>
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl tracking-wider text-white mb-6 leading-tight animate-fade-in-up">
+              Arquitetura sob medida.<br/>
+              <span className="text-gold-gradient font-medium">Precisão em cada detalhe.</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-[#E8E5E0] mb-10 font-light leading-relaxed tracking-wide animate-fade-in-up">
+              Soluções personalizadas em ACM para fachadas, portas, portões e móveis planejados de alto padrão.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-start items-center animate-fade-in-up">
+              <Link
+                href="/portal/projetos/novo"
+                className="w-full sm:w-auto bg-[#C6A537] hover:bg-[#DFBF52] text-white px-8 py-4 rounded-sm text-xs font-semibold tracking-widest uppercase transition-all duration-300 shadow-lg shadow-black/20 text-center"
+              >
+                ENVIAR MEU PROJETO
+              </Link>
+              <Link
+                href="/a-alumera"
+                className="w-full sm:w-auto border border-[#E8E5E0] hover:border-[#C6A537] hover:text-[#C6A537] text-white px-8 py-4 rounded-sm text-xs font-semibold tracking-widest uppercase transition-all duration-300 text-center"
+              >
+                CONHECER A ALUMERA
+              </Link>
+            </div>
           </div>
         </div>
       </section>
