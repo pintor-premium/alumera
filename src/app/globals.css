@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gold: #C6A537;
+  --color-gold-light: #DFBF52;
+  --color-gold-dark: #A58425;
+  --color-dark-bg: #171513;
+  --color-dark-card: #2C241D;
+  --color-gray-dark: #6F6A64;
+  --color-gray-light: #E8E5E0;
+  
+  --font-sans: var(--font-geist-sans), Arial, sans-serif;
+  --font-serif: Georgia, serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --foreground: #171513;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar-track {
+  background: #171513;
+}
+::-webkit-scrollbar-thumb {
+  background: #2C241D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A537;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(44, 36, 29, 0.95);
+  border: 1px solid rgba(198, 165, 55, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.glass-card:hover {
+  border-color: rgba(198, 165, 55, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(198, 165, 55, 0.1);
+}
+
+/* Golden text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C6A537 0%, #DFBF52 50%, #A58425 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hover effects */
+.transition-gold {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Form inputs styles */
+.input-premium {
+  background-color: rgba(23, 21, 19, 0.5);
+  border: 1px solid #E8E5E0;
+  color: #171513;
+  transition: all 0.3s ease;
+}
+
+.input-premium:focus {
+  outline: none;
+  border-color: #C6A537;
+  box-shadow: 0 0 0 2px rgba(198, 165, 55, 0.2);
+}
+
+/* Dark mode inputs (for dashboard/portal dark panels) */
+.input-premium-dark {
+  background-color: #171513;
+  border: 1px solid #2C241D;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.input-premium-dark:focus {
+  outline: none;
+  border-color: #C6A537;
+  box-shadow: 0 0 0 2px rgba(198, 165, 55, 0.2);
 }

@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PLATAFORMA ALUMERA
 
-## Getting Started
+Este é o ecossistema digital completo da **ALUMERA** — soluções personalizadas em ACM para o mercado imobiliário de alto padrão. A plataforma integra o site institucional, o portfólio público administrável, o Portal do Profissional (Arquitetos e Engenheiros) e o painel CRM Administrativo (controle operacional, financeiro, orçamentos e contratos).
 
-First, run the development server:
+---
+
+## 🚀 Tecnologias Utilizadas (Stack)
+
+- **Frontend/Backend**: Next.js 16 (App Router) + TypeScript + React 19
+- **Estilização**: Tailwind CSS v4 + Design System Premium (Dourado, Marrom e Tons Escuros)
+- **Banco de Dados & Autenticação**: Supabase PostgreSQL + Supabase Auth
+- **Armazenamento de Arquivos**: Supabase Storage (Buckets privados e públicos)
+- **Hospedagem & Deploy**: Vercel
+
+---
+
+## 📂 Estrutura de Diretórios
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+codigo-alumera/
+├── public/                  # Arquivos estáticos (imagens reais da Alumera, logos, etc.)
+│   └── imagens/             # Assets da marca (cozinha, suite, logo, icones)
+├── src/
+│   ├── app/                 # Roteamento e layouts (Next.js App Router)
+│   │   ├── (public)/        # Site público (/a-alumera, /solucoes, /projetos, /contato)
+│   │   ├── (auth)/          # Telas de login, cadastro e redefinição de senha
+│   │   ├── portal/          # Área restrita de Arquitetos e Engenheiros
+│   │   ├── admin/           # Painel CRM Administrativo (Protegido por perfil)
+│   │   ├── globals.css      # Design System e variáveis de tema CSS
+│   │   └── layout.tsx       # Layout raiz e ToastProvider
+│   ├── components/          # Componentes reutilizáveis (Header, Footer, Toast)
+│   ├── lib/
+│   │   └── supabase/        # Integração e clientes SSR do Supabase
+│   └── middleware.ts        # Controle de sessão e proteção de rotas
+├── supabase_schema.sql      # Script SQL completo de tabelas, RLS e triggers
+├── package.json             # Dependências e scripts
+└── README.md                # Esta documentação
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Instalação e Execução Local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Clonar e Instalar Dependências
+No diretório do projeto, execute:
+```bash
+npm install
+```
 
-## Learn More
+### 2. Configurar Variáveis de Ambiente
+Renomeie o arquivo `.env.example` para `.env.local` e preencha as credenciais do seu projeto Supabase:
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://seu-projeto.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-chave-anonima-aqui
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Executar em Desenvolvimento
+Inicie o servidor local:
+```bash
+npm run dev
+```
+Acesse `http://localhost:3000` no seu navegador.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💾 Configuração do Supabase (Banco de Dados, RLS e Storage)
 
-## Deploy on Vercel
+### 1. Modelagem e Migrations
+1. Acesse o painel do seu projeto no **[Supabase](https://supabase.com)**.
+2. Abra a aba **SQL Editor** no menu lateral esquerdo.
+3. Clique em **New query**.
+4. Copie todo o conteúdo do arquivo [`supabase_schema.sql`](file:///c:/Users/sandr/Desktop/PLATAFORMA%20ALUMERA/codigo-alumera/supabase_schema.sql) da raiz deste projeto e cole no editor.
+5. Clique em **Run** para criar a estrutura completa do banco de dados.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### O que este script SQL cria automaticamente:
+- **Tabelas de Negócio**: `usuarios`, `perfis_profissionais`, `servicos`, `projetos`, `arquivos_projeto`, `orcamentos`, `contratos`, `transacoes_financeiras`, `categorias_financeiras`, `notificacoes` e `atividades`.
+- **Triggers**:
+  - `handle_new_user`: Disparado ao cadastrar uma conta via Supabase Auth. Ele insere automaticamente o registro na tabela `usuarios` e, caso seja Arquiteto ou Engenheiro, cria seu perfil em `perfis_profissionais`.
+  - **Administrador Automático**: Se o e-mail de cadastro for `alumera@gmail.com`, o trigger atribui a ele o perfil `administrador`.
+- **Row Level Security (RLS)**: Proteção em nível de linha em todas as tabelas. Os profissionais só conseguem ler/escrever seus próprios projetos/mensagens, enquanto a equipe administrativa possui acesso irrestrito.
+- **Buckets de Storage**:
+  - `arquivos-projetos` (Privado - uploads de plantas técnicas de até 500MB)
+  - `contratos` (Privado - PDFs de contratos assinados de até 500MB)
+  - `portfolio` (Público - imagens do site público)
+  - `avatar` (Público - avatares)
+- **Seed Iniciais**: Insere os serviços de ACM de partida e as categorias financeiras de receitas e despesas.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 👤 Como Criar o Administrador Inicial
+
+1. Acesse a tela de cadastro público da aplicação em `http://localhost:3000/cadastro` (ou na tela de login, clique para criar conta).
+2. Cadastre-se utilizando obrigatoriamente o e-mail:
+   - **E-mail**: `alumera@gmail.com`
+   - **Senha**: De sua preferência (mínimo de 6 caracteres).
+3. Conclua o cadastro. O trigger do banco identificará o e-mail e ativará as permissões de **administrador completo**.
+4. Você será redirecionado para o painel CRM Administrativo `/admin`.
+
+*Nota: Para criar outras funções como operacional ou financeiro, você pode alterar o campo `perfil` do usuário diretamente na tabela `public.usuarios` no editor de tabelas do Supabase.*
+
+---
+
+## ⚡ Publicação na Vercel (Deploy)
+
+### 1. Preparação
+Certifique-se de que o projeto foi buildado localmente com sucesso:
+```bash
+npm run build
+```
+
+### 2. Deploy via Vercel CLI ou GitHub
+- **Opção A (GitHub)**: Suba o código para um repositório privado no GitHub, conecte sua conta da Vercel ao repositório e selecione o framework "Next.js".
+- **Opção B (CLI)**: No terminal da pasta do projeto, execute:
+  ```bash
+  vercel
+  ```
+
+### 3. Configurar Variáveis de Ambiente na Vercel
+Nas configurações do seu projeto na Vercel (Settings > Environment Variables), adicione:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+*Importante: O domínio definitivo pode ser configurado na seção Domains da Vercel apontando seus registros DNS.*
