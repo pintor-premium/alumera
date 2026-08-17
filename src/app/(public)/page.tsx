@@ -68,15 +68,13 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div 
+      className="flex flex-col min-h-screen bg-fixed bg-cover bg-center bg-[#171513]"
+      style={{ backgroundImage: "url('/imagens/imagem para hero e paralax.png')" }}
+    >
       {/* HERO SECTION */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center bg-black">
-        <div 
-          className="absolute inset-0 z-0 bg-fixed bg-cover bg-center opacity-60"
-          style={{ backgroundImage: "url('/imagens/imagem para hero e paralax.png')" }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#171513] via-transparent to-black/50" />
-        </div>
+      <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center bg-black/40">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#171513] via-transparent to-black/50 z-0" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <span className="font-serif tracking-[0.3em] text-[#C6A537] text-xs sm:text-sm font-semibold uppercase block mb-6 animate-fade-in-up">
@@ -107,17 +105,17 @@ export default function HomePage() {
       </section>
 
       {/* SERVIÇOS SECTION */}
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-white/5 backdrop-blur-sm py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="font-serif text-xs sm:text-sm tracking-[0.2em] text-[#C6A537] font-semibold uppercase block mb-3">
               NOSSO CATALOGO
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#171513] tracking-wide mb-6">
+            <h2 className="font-serif text-3xl sm:text-5xl text-white tracking-wide mb-6">
               Soluções Sob Medida em ACM
             </h2>
             <div className="w-16 h-[2px] bg-[#C6A537] mx-auto mb-6" />
-            <p className="text-sm sm:text-base text-[#6F6A64] font-light leading-relaxed">
+            <p className="text-sm sm:text-base text-[#E8E5E0]/80 font-light leading-relaxed">
               Desenvolvemos produtos customizados a partir dos projetos técnicos enviados por arquitetos e engenheiros, unindo tecnologia de ponta com sofisticação artesanal.
             </p>
           </div>
