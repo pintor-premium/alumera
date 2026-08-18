@@ -114,7 +114,11 @@ export default function PortalLayout({
         {/* Nav Links */}
         <nav className="flex-1 px-4 py-6 space-y-1">
           {menuItems.map((item) => {
-            const isActive = item.href === '/portal' ? pathname === '/portal' : pathname.startsWith(item.href)
+            const isActive = item.href === '/portal'
+              ? pathname === '/portal'
+              : item.href === '/portal/projetos'
+              ? pathname.startsWith('/portal/projetos') && !pathname.startsWith('/portal/projetos/novo')
+              : pathname.startsWith(item.href)
             return (
               <Link
                 key={item.label}
@@ -263,7 +267,11 @@ export default function PortalLayout({
             {/* Nav Links */}
             <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
               {menuItems.map((item) => {
-                const isActive = item.href === '/portal' ? pathname === '/portal' : pathname.startsWith(item.href)
+                const isActive = item.href === '/portal'
+                  ? pathname === '/portal'
+                  : item.href === '/portal/projetos'
+                  ? pathname.startsWith('/portal/projetos') && !pathname.startsWith('/portal/projetos/novo')
+                  : pathname.startsWith(item.href)
                 return (
                   <Link
                     key={item.label}

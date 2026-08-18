@@ -162,7 +162,11 @@ export default function AdminLayout({
         {/* Nav Links */}
         <nav className="flex-1 px-4 py-6 space-y-1.5">
           {menuItems.map((item) => {
-            const isActive = item.href === '/admin' ? pathname === '/admin' : pathname.startsWith(item.href)
+            const isActive = item.href === '/admin'
+              ? pathname === '/admin'
+              : item.href === '/admin/projetos'
+              ? pathname.startsWith('/admin/projetos') && !pathname.startsWith('/admin/projetos/kanban')
+              : pathname.startsWith(item.href)
             return (
               <Link
                 key={item.label}
@@ -269,7 +273,11 @@ export default function AdminLayout({
             {/* Nav Links */}
             <nav className="flex-1 px-4 py-6 space-y-1.5">
               {menuItems.map((item) => {
-                const isActive = item.href === '/admin' ? pathname === '/admin' : pathname.startsWith(item.href)
+                const isActive = item.href === '/admin'
+                  ? pathname === '/admin'
+                  : item.href === '/admin/projetos'
+                  ? pathname.startsWith('/admin/projetos') && !pathname.startsWith('/admin/projetos/kanban')
+                  : pathname.startsWith(item.href)
                 return (
                   <Link
                     key={item.label}
