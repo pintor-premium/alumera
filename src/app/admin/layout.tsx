@@ -78,54 +78,22 @@ export default function AdminLayout({
     router.refresh()
   }
 
-  const menuSections = [
-    {
-      title: 'Visão Geral',
-      items: [
-        { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
-      ]
-    },
-    {
-      title: 'Relacionamento',
-      items: [
-        { label: 'Clientes', href: '/admin/clientes', icon: Users },
-      ]
-    },
-    {
-      title: 'Projetos',
-      items: [
-        { label: 'Todos os Projetos', href: '/admin/projetos', icon: FolderKanban },
-        { label: 'Pipeline Kanban', href: '/admin/projetos/kanban', icon: KanbanSquare },
-      ]
-    },
-    {
-      title: 'Comercial',
-      items: [
-        { label: 'Orçamentos', href: '/admin/orcamentos', icon: FileText },
-        { label: 'Contratos', href: '/admin/contratos', icon: FileSignature },
-      ]
-    },
-    {
-      title: 'Financeiro',
-      items: [
-        { label: 'Fluxo de Caixa', href: '/admin/financeiro', icon: DollarSign },
-        { label: 'Relatórios', href: '/admin/relatorios', icon: TrendingUp },
-      ]
-    },
-    {
-      title: 'Portfólio',
-      items: [
-        { label: 'Projetos Realizados', href: '/admin/portfolio', icon: ImageIcon },
-      ]
-    }
+  const menuItems = [
+    { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+    { label: 'Clientes', href: '/admin/clientes', icon: Users },
+    { label: 'Todos os Projetos', href: '/admin/projetos', icon: FolderKanban },
+    { label: 'Pipeline Kanban', href: '/admin/projetos/kanban', icon: KanbanSquare },
+    { label: 'Orçamentos', href: '/admin/orcamentos', icon: FileText },
+    { label: 'Contratos', href: '/admin/contratos', icon: FileSignature },
+    { label: 'Fluxo de Caixa', href: '/admin/financeiro', icon: DollarSign },
+    { label: 'Relatórios', href: '/admin/relatorios', icon: TrendingUp },
+    { label: 'Projetos Realizados', href: '/admin/portfolio', icon: ImageIcon },
   ]
 
-  const activePageLabel = menuSections
-    .flatMap(s => s.items)
-    .find(item => {
-      if (item.href === '/admin') return pathname === '/admin'
-      return pathname.startsWith(item.href)
-    })?.label || 'CRM Admin'
+  const activePageLabel = menuItems.find(item => {
+    if (item.href === '/admin') return pathname === '/admin'
+    return pathname.startsWith(item.href)
+  })?.label || 'CRM Admin'
 
   if (authorized === null) {
     return (
@@ -191,34 +159,25 @@ export default function AdminLayout({
           </span>
         </div>
 
-        {/* Nav Links divided by sections */}
-        <nav className="flex-1 px-4 py-6 space-y-6">
-          {menuSections.map((section, idx) => (
-            <div key={idx} className="space-y-1.5">
-              <h5 className="px-4 text-[9px] uppercase font-extrabold tracking-widest text-[#6F6A64]">
-                {section.title}
-              </h5>
-              <div className="space-y-0.5">
-                {section.items.map((item) => {
-                  const isActive = item.href === '/admin' ? pathname === '/admin' : pathname.startsWith(item.href)
-                  return (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      className={`flex items-center gap-3 px-4 py-2.5 rounded-sm text-[11px] font-semibold uppercase tracking-wider transition-all duration-150 ${
-                        isActive
-                          ? 'bg-[#C6A537] text-white'
-                          : 'text-[#6F6A64] hover:bg-[#2C241D] hover:text-[#E8E5E0]'
-                      }`}
-                    >
-                      <item.icon className="w-4 h-4 flex-shrink-0" />
-                      {item.label}
-                    </Link>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
+        {/* Nav Links */}
+        <nav className="flex-1 px-4 py-6 space-y-1.5">
+          {menuItems.map((item) => {
+            const isActive = item.href === '/admin' ? pathname === '/admin' : pathname.startsWith(item.href)
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`flex items-center gap-3 px-4 py-2.5 rounded-sm text-[11px] font-semibold uppercase tracking-wider transition-all duration-150 ${
+                  isActive
+                    ? 'bg-[#C6A537] text-white'
+                    : 'text-[#6F6A64] hover:bg-[#2C241D] hover:text-[#E8E5E0]'
+                }`}
+              >
+                <item.icon className="w-4 h-4 flex-shrink-0" />
+                {item.label}
+              </Link>
+            )
+          })}
         </nav>
 
         {/* Footer Sidebar */}
@@ -307,35 +266,26 @@ export default function AdminLayout({
               <h4 className="text-sm font-semibold text-white mt-1 truncate">{userName}</h4>
             </div>
 
-            {/* Nav Links divided by sections */}
-            <nav className="flex-1 px-4 py-6 space-y-6">
-              {menuSections.map((section, idx) => (
-                <div key={idx} className="space-y-1.5">
-                  <h5 className="px-4 text-[9px] uppercase font-extrabold tracking-widest text-[#6F6A64]">
-                    {section.title}
-                  </h5>
-                  <div className="space-y-0.5">
-                    {section.items.map((item) => {
-                      const isActive = item.href === '/admin' ? pathname === '/admin' : pathname.startsWith(item.href)
-                      return (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className={`flex items-center gap-3 px-4 py-2.5 rounded-sm text-[11px] font-semibold uppercase tracking-wider transition-all duration-150 ${
-                            isActive
-                              ? 'bg-[#C6A537] text-white'
-                              : 'text-[#6F6A64] hover:bg-[#2C241D] hover:text-[#E8E5E0]'
-                          }`}
-                        >
-                          <item.icon className="w-4 h-4 flex-shrink-0" />
-                          {item.label}
-                        </Link>
-                      )
-                    })}
-                  </div>
-                </div>
-              ))}
+            {/* Nav Links */}
+            <nav className="flex-1 px-4 py-6 space-y-1.5">
+              {menuItems.map((item) => {
+                const isActive = item.href === '/admin' ? pathname === '/admin' : pathname.startsWith(item.href)
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-2.5 rounded-sm text-[11px] font-semibold uppercase tracking-wider transition-all duration-150 ${
+                      isActive
+                        ? 'bg-[#C6A537] text-white'
+                        : 'text-[#6F6A64] hover:bg-[#2C241D] hover:text-[#E8E5E0]'
+                    }`}
+                  >
+                    <item.icon className="w-4 h-4 flex-shrink-0" />
+                    {item.label}
+                  </Link>
+                )
+              })}
             </nav>
 
             {/* Footer Sidebar */}
