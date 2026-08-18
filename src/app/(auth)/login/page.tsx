@@ -44,7 +44,7 @@ export default function LoginPage() {
           .eq('id', data.user.id)
           .single()
 
-        const userProfile = profile?.perfil || 'arquiteto'
+        const userProfile = data.user?.email === 'alumera@gmail.com' ? 'administrador' : (profile?.perfil || 'arquiteto')
 
         if (userProfile === 'administrador' || userProfile === 'operacional' || userProfile === 'financeiro') {
           router.push('/admin')

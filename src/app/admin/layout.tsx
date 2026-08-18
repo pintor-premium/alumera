@@ -56,12 +56,16 @@ export default function AdminLayout({
         .eq('id', user.id)
         .single()
 
-      if (profile && ['administrador', 'operacional', 'financeiro'].includes(profile.perfil)) {
+      const isDefaultAdmin = user.email === 'alumera@gmail.com'
+      const activeRole = isDefaultAdmin ? 'administrador' : (profile?.perfil || '')
+
+      if (isDefaultAdmin || (profile && ['administrador', 'operacional', 'financeiro'].includes(profile.perfil))) {
         setAuthorized(true)
-        setUserName(profile.nome_completo)
-        setUserRole(profile.perfil)
+        setUserName(isDefaultAdmin ? 'Administrador Alumera' : (profile?.nome_completo || 'Administrador'))
+        setUserRole(activeRole)
       } else {
         setAuthorized(false)
+        router.push('/portal')
       }
     }
     checkAuth()

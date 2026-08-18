@@ -49,7 +49,7 @@ export async function updateSession(request: NextRequest) {
       .eq('id', user.id)
       .single()
 
-    const userProfile = profile?.perfil || 'arquiteto'
+    const userProfile = user.email === 'alumera@gmail.com' ? 'administrador' : (profile?.perfil || 'arquiteto')
 
     // Se já estiver logado e acessar login/cadastro, redireciona conforme o perfil
     if (isAuthRoute) {
