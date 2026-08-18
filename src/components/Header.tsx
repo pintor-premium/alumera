@@ -44,7 +44,7 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <div className="relative w-[320px] h-[72px]">
                 <Image
-                  src="/imagens/LOGO%20SEM%20FUNDO%20ALUMERA%20DOURADO%20E%20BRANCO.png"
+                  src="/imagens/LOGO%20COM%20DIMENS%C3%83O%20E%20VOLUME.png"
                   alt="Alumera"
                   fill
                   style={{ objectFit: 'contain', objectPosition: 'left' }}
