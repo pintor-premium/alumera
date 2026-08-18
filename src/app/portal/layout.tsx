@@ -93,13 +93,13 @@ export default function PortalLayout({
       {/* SIDEBAR DESKTOP */}
       <aside className="hidden lg:flex flex-col w-64 bg-[#171513] text-[#E8E5E0] border-r border-[#2C241D] flex-shrink-0">
         {/* Brand */}
-        <div className="h-20 flex items-center px-6 border-b border-[#2C241D]">
-          <div className="relative w-52 h-12">
+        <div className="h-28 flex items-center justify-center border-b border-[#2C241D]">
+          <div className="relative w-[220px] h-[65px]">
             <Image
               src="/imagens/LOGO%20SEM%20FUNDO%20ALUMERA%20DOURADO%20E%20BRANCO.png"
               alt="Alumera"
               fill
-              style={{ objectFit: 'contain', objectPosition: 'left' }}
+              style={{ objectFit: 'contain' }}
             />
           </div>
         </div>
@@ -245,13 +245,13 @@ export default function PortalLayout({
             </div>
 
             {/* Brand */}
-            <div className="h-20 flex items-center px-6 border-b border-[#2C241D]">
-              <div className="relative w-52 h-12">
+            <div className="h-28 flex items-center justify-center border-b border-[#2C241D]">
+              <div className="relative w-[220px] h-[65px]">
                 <Image
                   src="/imagens/LOGO%20SEM%20FUNDO%20ALUMERA%20DOURADO%20E%20BRANCO.png"
                   alt="Alumera"
                   fill
-                  style={{ objectFit: 'contain', objectPosition: 'left' }}
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
             </div>
