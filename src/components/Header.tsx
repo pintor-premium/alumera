@@ -42,7 +42,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="relative w-48 h-10">
+              <div className="relative w-56 h-12">
                 <Image
                   src="/imagens/LOGO%20SEM%20FUNDO%20ALUMERA%20DOURADO%20E%20BRANCO.png"
                   alt="Alumera"

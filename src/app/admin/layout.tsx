@@ -139,7 +139,7 @@ export default function AdminLayout({
       <aside className="hidden lg:flex flex-col w-64 bg-[#171513] text-[#E8E5E0] border-r border-[#2C241D] flex-shrink-0 overflow-y-auto">
         {/* Brand */}
         <div className="h-20 flex items-center px-6 border-b border-[#2C241D] flex-shrink-0">
-          <div className="relative w-44 h-10">
+          <div className="relative w-52 h-12">
             <Image
               src="/imagens/LOGO%20SEM%20FUNDO%20ALUMERA%20DOURADO%20E%20BRANCO.png"
               alt="Alumera"
@@ -252,7 +252,7 @@ export default function AdminLayout({
 
             {/* Brand */}
             <div className="h-20 flex items-center px-6 border-b border-[#2C241D] flex-shrink-0">
-              <div className="relative w-44 h-10">
+              <div className="relative w-52 h-12">
                 <Image
                   src="/imagens/LOGO%20SEM%20FUNDO%20ALUMERA%20DOURADO%20E%20BRANCO.png"
                   alt="Alumera"
