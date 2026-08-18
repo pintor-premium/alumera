@@ -138,16 +138,15 @@ export default function AdminLayout({
       {/* SIDEBAR DESKTOP */}
       <aside className="hidden lg:flex flex-col w-64 bg-[#171513] text-[#E8E5E0] border-r border-[#2C241D] flex-shrink-0 overflow-y-auto">
         {/* Brand */}
-        <div className="h-20 flex items-center gap-3 px-6 border-b border-[#2C241D] flex-shrink-0">
-          <div className="relative w-8 h-8">
+        <div className="h-20 flex items-center px-6 border-b border-[#2C241D] flex-shrink-0">
+          <div className="relative w-44 h-10">
             <Image
-              src="/imagens/ÍCONE SEM FUNDO PARA BG ESCURO.png"
+              src="/imagens/LOGO%20SEM%20FUNDO%20ALUMERA%20DOURADO%20E%20BRANCO.png"
               alt="Alumera"
               fill
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'contain', objectPosition: 'left' }}
             />
           </div>
-          <span className="font-serif tracking-widest text-[#C6A537] font-semibold text-lg">ALUMERA</span>
         </div>
 
         {/* User Info */}
@@ -252,16 +251,15 @@ export default function AdminLayout({
             </div>
 
             {/* Brand */}
-            <div className="h-20 flex items-center gap-3 px-6 border-b border-[#2C241D] flex-shrink-0">
-              <div className="relative w-8 h-8">
+            <div className="h-20 flex items-center px-6 border-b border-[#2C241D] flex-shrink-0">
+              <div className="relative w-44 h-10">
                 <Image
-                  src="/imagens/ÍCONE SEM FUNDO PARA BG ESCURO.png"
+                  src="/imagens/LOGO%20SEM%20FUNDO%20ALUMERA%20DOURADO%20E%20BRANCO.png"
                   alt="Alumera"
                   fill
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: 'contain', objectPosition: 'left' }}
                 />
               </div>
-              <span className="font-serif tracking-widest text-[#C6A537] font-semibold text-lg">ALUMERA</span>
             </div>
 
             {/* User Info */}
