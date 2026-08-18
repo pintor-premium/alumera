@@ -156,9 +156,9 @@ export default function CadastroPage() {
           {/* Header */}
           <div className="flex justify-between items-start gap-4">
             <div>
-              <Link href="/" className="relative w-12 h-12 block mb-4">
+              <Link href="/" className="relative w-[280px] h-[70px] block mb-4">
                 <Image
-                  src="/imagens/ÍCONE SEM FUNDO PARA BG CLARO.png"
+                  src="/imagens/LOGO%20COM%20DIMENS%C3%83O%20E%20VOLUME.png"
                   alt="Alumera Logo"
                   fill
                   style={{ objectFit: 'contain' }}

@@ -110,9 +110,9 @@ export default function LoginPage() {
         <div className="w-full max-w-md space-y-8">
           {/* Logo */}
           <div className="text-center lg:text-left flex flex-col items-center lg:items-start gap-4">
-            <Link href="/" className="relative w-16 h-16 block">
+            <Link href="/" className="relative w-[280px] h-[70px] block">
               <Image
-                src="/imagens/ÍCONE SEM FUNDO PARA BG CLARO.png"
+                src="/imagens/LOGO%20COM%20DIMENS%C3%83O%20E%20VOLUME.png"
                 alt="Alumera Logo"
                 fill
                 style={{ objectFit: 'contain' }}
