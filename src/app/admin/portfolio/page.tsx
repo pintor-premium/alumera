@@ -350,8 +350,7 @@ export default function AdminPortfolioPage() {
                   >
                     <option value="Fachadas Residenciais">Fachadas Residenciais</option>
                     <option value="Portas em ACM">Portas em ACM</option>
-                    <option value="Portões de Elevação">Portões de Elevação</option>
-                    <option value="Portões Eletrônicos">Portões Eletrônicos</option>
+                    <option value="Portões Eletrônicos em ACM">Portões Eletrônicos em ACM</option>
                     <option value="Móveis Planejados em ACM">Móveis Planejados em ACM</option>
                     <option value="Outros">Outros</option>
                   </select>

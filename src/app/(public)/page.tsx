@@ -16,12 +16,7 @@ export default function HomePage() {
       icon: DoorOpen,
       image: '/imagens/porta%20em%20ACM%20capa.png',
     },
-    {
-      title: 'Portões de Elevação',
-      description: 'Portões estruturados com revestimento em ACM, projetados sob medida para fachadas elegantes.',
-      icon: Box,
-      image: '/imagens/SALA.png',
-    },
+
     {
       title: 'Portões Eletrônicos',
       description: 'Automatização e controle tecnológico perfeitamente integrados ao design do seu portão.',

@@ -30,13 +30,13 @@ export default function SolucoesPage() {
     },
     {
       id: 'portoes',
-      title: 'Portões de Elevação & Eletrônicos',
-      desc: 'Unimos segurança e estética arquitetônica de luxo nos portões de elevação da Alumera. Revestidos integralmente em ACM, os portões de garagem ficam alinhados perfeitamente com os painéis da fachada, camuflando a garagem e trazendo unidade ao design residencial. Sistemas de movimentação modernos garantem abertura silenciosa e rápida.',
+      title: 'Portões Eletrônicos em ACM',
+      desc: 'Unimos segurança, automação tecnológica e estética arquitetônica nos portões eletrônicos da Alumera. Revestidos integralmente com chapas premium de ACM, os portões eletrônicos garantem abertura rápida, silenciosa e com o máximo de sofisticação, integrados perfeitamente ao projeto da fachada residencial.',
       specs: [
         'Automatizadores rápidos de alta vazão',
         'Camuflagem perfeita junto a painéis de fachada fixos',
         'Estrutura em metalon galvanizado com pintura epóxi anti-ferrugem',
-        'Sistema de contra-peso projetado para suavidade mecânica'
+        'Sistemas modernos de automação e controle tecnológico'
       ],
       image: '/imagens/SALA.png'
     },
