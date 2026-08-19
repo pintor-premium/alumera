@@ -27,7 +27,7 @@ export default function HomePage() {
       title: 'Portões Eletrônicos',
       description: 'Automatização e controle tecnológico perfeitamente integrados ao design do seu portão.',
       icon: Shield,
-      image: '/imagens/COZINHA.png',
+      image: '/imagens/Portões%20eletrônicos%20em%20ACM.png',
     },
   ]
 
