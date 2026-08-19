@@ -14,7 +14,7 @@ export default function HomePage() {
       title: 'Portas em ACM',
       description: 'Portas imponentes desenvolvidas sob medida, integrando design moderno e alta durabilidade.',
       icon: DoorOpen,
-      image: '/imagens/SUITE.png',
+      image: '/imagens/porta%20em%20ACM%20capa.png',
     },
     {
       title: 'Portões de Elevação',
