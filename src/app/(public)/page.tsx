@@ -18,16 +18,16 @@ export default function HomePage() {
     },
 
     {
-      title: 'Portões Eletrônicos',
-      description: 'Automatização e controle tecnológico perfeitamente integrados ao design do seu portão.',
-      icon: Shield,
-      image: '/imagens/COZINHA.png',
-    },
-    {
       title: 'Móveis Planejados em ACM',
       description: 'Móveis sob medida inovadores, aproveitando a leveza, durabilidade e flexibilidade do ACM.',
       icon: Maximize2,
       image: '/imagens/QUARTO-INFANTIL.png',
+    },
+    {
+      title: 'Portões Eletrônicos',
+      description: 'Automatização e controle tecnológico perfeitamente integrados ao design do seu portão.',
+      icon: Shield,
+      image: '/imagens/COZINHA.png',
     },
   ]
 
@@ -117,7 +117,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <div
                 key={service.title}
