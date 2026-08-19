@@ -21,7 +21,7 @@ export default function HomePage() {
       title: 'Móveis Planejados em ACM',
       description: 'Móveis sob medida inovadores, aproveitando a leveza, durabilidade e flexibilidade do ACM.',
       icon: Maximize2,
-      image: '/imagens/QUARTO-INFANTIL.png',
+      image: '/imagens/COZINHA.png',
     },
     {
       title: 'Portões Eletrônicos',
