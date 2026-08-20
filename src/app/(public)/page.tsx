@@ -9,25 +9,28 @@ export default function HomePage() {
       description: 'Soluções personalizadas em ACM de alto padrão para projetos residenciais contemporâneos e luxuosos.',
       icon: Compass,
       image: '/imagens/imagem para hero e paralax.png',
+      link: '/solucoes#fachadas',
     },
     {
       title: 'Portas em ACM',
       description: 'Portas imponentes desenvolvidas sob medida, integrando design moderno e alta durabilidade.',
       icon: DoorOpen,
       image: '/imagens/porta%20em%20ACM%20capa.png',
+      link: '/solucoes#portas',
     },
-
     {
       title: 'Móveis Planejados em ACM',
       description: 'Móveis sob medida inovadores, aproveitando a leveza, durabilidade e flexibilidade do ACM.',
       icon: Maximize2,
       image: '/imagens/COZINHA.png',
+      link: '/solucoes#moveis',
     },
     {
       title: 'Portões Eletrônicos',
       description: 'Automatização e controle tecnológico perfeitamente integrados ao design do seu portão.',
       icon: Shield,
       image: '/imagens/Portões%20eletrônicos%20em%20ACM.png',
+      link: '/solucoes#portoes',
     },
   ]
 
@@ -145,7 +148,7 @@ export default function HomePage() {
                     {service.description}
                   </p>
                   <Link
-                    href="/solucoes"
+                    href={service.link}
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#C6A537] hover:text-white transition-colors"
                   >
                     Saber Mais <ArrowRight className="w-4 h-4" />
