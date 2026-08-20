@@ -38,7 +38,7 @@ export default function SolucoesPage() {
         'Estrutura em metalon galvanizado com pintura epóxi anti-ferrugem',
         'Sistemas modernos de automação e controle tecnológico'
       ],
-      image: '/imagens/SALA.png'
+      image: '/imagens/Portões%20eletrônicos%20em%20ACM.png'
     },
     {
       id: 'moveis',
