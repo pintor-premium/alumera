@@ -48,7 +48,7 @@ export default function AAlumeraPage() {
 
           <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
             <Image
-              src="/imagens/SUITE.png"
+              src="/imagens/imagem%20para%20hero%20e%20paralax.png"
               alt="Design Alumera"
               fill
               style={{ objectFit: 'cover' }}
