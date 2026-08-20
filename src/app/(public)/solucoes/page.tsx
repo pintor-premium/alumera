@@ -26,7 +26,7 @@ export default function SolucoesPage() {
         'Fechaduras digitais/biométricas embutidas na própria estrutura',
         'Borrachas de vedação dupla contra ventos e poeira'
       ],
-      image: '/imagens/SUITE.png'
+      image: '/imagens/Portas%20em%20ACM.png'
     },
     {
       id: 'portoes',
